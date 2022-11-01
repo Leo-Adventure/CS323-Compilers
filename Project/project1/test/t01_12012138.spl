@@ -1,0 +1,14 @@
+int t01_12012138(int a, int b, int c) 
+{
+  int d = 0
+  if(d < a)
+    d = a
+  
+  if(d > b){
+    d = b;
+  }
+  else{
+    d = c;
+  }
+  return d
+  }

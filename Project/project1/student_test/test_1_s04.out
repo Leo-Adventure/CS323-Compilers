@@ -1,0 +1,5 @@
+Error type A at Line 2: wrong id : 0a
+Error type A at Line 3: Unknown characters ’@’ 
+Error type A at Line 4: Unknown characters ’|’ 
+Error type A at Line 5: wrong int : 00 (可不输出)
+Error type B at Line 5: Missing A Semicolon ';'

@@ -1,0 +1,11 @@
+int t02_12012138(int a, int b, int c) 
+{
+/*
+multiple line comment
+---------------------
+*/
+  int d = 0;
+  if(d < a || (b == c || a == 0)){
+    d = a;
+  }
+}

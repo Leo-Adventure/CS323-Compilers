@@ -1,0 +1,13 @@
+int count;
+int t05_12012138(){
+    int res = fact(10);
+    int c = 3, d = 5;
+    return res;
+}
+
+int fact(int a){
+    if(a == 1){
+        return 1;
+    }
+    return fact(a - 1) * a;
+}

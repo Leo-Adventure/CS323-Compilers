@@ -1,0 +1,98 @@
+Program (1)
+  ExtDefList (1)
+    ExtDef (1)
+      Specifier (1)
+        StructSpecifier (1)
+          STRUCT
+          ID: struct_1
+          LC
+          DefList (3)
+            Def (3)
+              Specifier (3)
+                TYPE: int
+              DecList (3)
+                Dec (3)
+                  VarDec (3)
+                    ID: num
+              SEMI
+            DefList (4)
+              Def (4)
+                Specifier (4)
+                  TYPE: char
+                DecList (4)
+                  Dec (4)
+                    VarDec (4)
+                      ID: value
+                SEMI
+              DefList (5)
+                Def (5)
+                  Specifier (5)
+                    TYPE: float
+                  DecList (5)
+                    Dec (5)
+                      VarDec (5)
+                        VarDec (5)
+                          ID: res
+                        LB
+                        INT: 10
+                        RB
+                  SEMI
+          RC
+      SEMI
+    ExtDefList (7)
+      ExtDef (7)
+        Specifier (7)
+          TYPE: int
+        FunDec (7)
+          ID: t04_12012919
+          LP
+          VarList (7)
+            ParamDec (7)
+              Specifier (7)
+                TYPE: int
+              VarDec (7)
+                ID: num
+          RP
+        CompSt (8)
+          LC
+          DefList (9)
+            Def (9)
+              Specifier (9)
+                StructSpecifier (9)
+                  STRUCT
+                  ID: struct_1
+              DecList (9)
+                Dec (9)
+                  VarDec (9)
+                    ID: obj
+              SEMI
+          StmtList (10)
+            Stmt (10)
+              Exp (10)
+                Exp (10)
+                  Exp (10)
+                    ID: obj
+                  DOT
+                  ID: num
+                ASSIGN
+                Exp (10)
+                  ID: num
+              SEMI
+            StmtList (11)
+              Stmt (11)
+                Exp (11)
+                  Exp (11)
+                    Exp (11)
+                      Exp (11)
+                        ID: obj
+                      DOT
+                      ID: res
+                    LB
+                    Exp (11)
+                      INT: 1
+                    RB
+                  ASSIGN
+                  Exp (11)
+                    FLOAT: 2.3
+                SEMI
+          RC

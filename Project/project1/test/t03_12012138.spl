@@ -1,0 +1,10 @@
+int t03_12012138() 
+{
+    float right_float = 1.234;
+    int wrong_int_1 = 0x023456;
+    int wrong_int_2 = 023456;
+    int right_int = 23456;
+    char right_char = 'c';
+    char wrong_char = 'wrong_char';
+    char wrong_char = '\xuu';
+}

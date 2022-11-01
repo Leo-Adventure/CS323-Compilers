@@ -1,0 +1,2 @@
+Error type A at Line 8: unknown lexeme 'wrong_char'
+Error type A at Line 9: unknown lexeme '\xuu'

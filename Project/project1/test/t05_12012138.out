@@ -1,0 +1,120 @@
+Program (1)
+  ExtDefList (1)
+    ExtDef (1)
+      Specifier (1)
+        TYPE: int
+      ExtDecList (1)
+        VarDec (1)
+          ID: count
+      SEMI
+    ExtDefList (2)
+      ExtDef (2)
+        Specifier (2)
+          TYPE: int
+        FunDec (2)
+          ID: t05_12012138
+          LP
+          RP
+        CompSt (2)
+          LC
+          DefList (3)
+            Def (3)
+              Specifier (3)
+                TYPE: int
+              DecList (3)
+                Dec (3)
+                  VarDec (3)
+                    ID: res
+                  ASSIGN
+                  Exp (3)
+                    ID: fact
+                    LP
+                    Args (3)
+                      Exp (3)
+                        INT: 10
+                    RP
+              SEMI
+            DefList (4)
+              Def (4)
+                Specifier (4)
+                  TYPE: int
+                DecList (4)
+                  Dec (4)
+                    VarDec (4)
+                      ID: c
+                    ASSIGN
+                    Exp (4)
+                      INT: 3
+                  COMMA
+                  DecList (4)
+                    Dec (4)
+                      VarDec (4)
+                        ID: d
+                      ASSIGN
+                      Exp (4)
+                        INT: 5
+                SEMI
+          StmtList (5)
+            Stmt (5)
+              RETURN
+              Exp (5)
+                ID: res
+              SEMI
+          RC
+      ExtDefList (8)
+        ExtDef (8)
+          Specifier (8)
+            TYPE: int
+          FunDec (8)
+            ID: fact
+            LP
+            VarList (8)
+              ParamDec (8)
+                Specifier (8)
+                  TYPE: int
+                VarDec (8)
+                  ID: a
+            RP
+          CompSt (8)
+            LC
+            StmtList (9)
+              Stmt (9)
+                IF
+                LP
+                Exp (9)
+                  Exp (9)
+                    ID: a
+                  EQ
+                  Exp (9)
+                    INT: 1
+                RP
+                Stmt (9)
+                  CompSt (9)
+                    LC
+                    StmtList (10)
+                      Stmt (10)
+                        RETURN
+                        Exp (10)
+                          INT: 1
+                        SEMI
+                    RC
+              StmtList (12)
+                Stmt (12)
+                  RETURN
+                  Exp (12)
+                    Exp (12)
+                      ID: fact
+                      LP
+                      Args (12)
+                        Exp (12)
+                          Exp (12)
+                            ID: a
+                          MINUS
+                          Exp (12)
+                            INT: 1
+                      RP
+                    MUL
+                    Exp (12)
+                      ID: a
+                  SEMI
+            RC

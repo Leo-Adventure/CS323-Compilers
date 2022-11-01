@@ -1,0 +1,87 @@
+Program (1)
+  ExtDefList (1)
+    ExtDef (1)
+      Specifier (1)
+        TYPE: int
+      FunDec (1)
+        ID: t02_12012138
+        LP
+        VarList (1)
+          ParamDec (1)
+            Specifier (1)
+              TYPE: int
+            VarDec (1)
+              ID: a
+          COMMA
+          VarList (1)
+            ParamDec (1)
+              Specifier (1)
+                TYPE: int
+              VarDec (1)
+                ID: b
+            COMMA
+            VarList (1)
+              ParamDec (1)
+                Specifier (1)
+                  TYPE: int
+                VarDec (1)
+                  ID: c
+        RP
+      CompSt (2)
+        LC
+        DefList (7)
+          Def (7)
+            Specifier (7)
+              TYPE: int
+            DecList (7)
+              Dec (7)
+                VarDec (7)
+                  ID: d
+                ASSIGN
+                Exp (7)
+                  INT: 0
+            SEMI
+        StmtList (8)
+          Stmt (8)
+            IF
+            LP
+            Exp (8)
+              Exp (8)
+                Exp (8)
+                  ID: d
+                LT
+                Exp (8)
+                  ID: a
+              OR
+              Exp (8)
+                LP
+                Exp (8)
+                  Exp (8)
+                    Exp (8)
+                      ID: b
+                    EQ
+                    Exp (8)
+                      ID: c
+                  OR
+                  Exp (8)
+                    Exp (8)
+                      ID: a
+                    EQ
+                    Exp (8)
+                      INT: 0
+                RP
+            RP
+            Stmt (8)
+              CompSt (8)
+                LC
+                StmtList (9)
+                  Stmt (9)
+                    Exp (9)
+                      Exp (9)
+                        ID: d
+                      ASSIGN
+                      Exp (9)
+                        ID: a
+                    SEMI
+                RC
+        RC

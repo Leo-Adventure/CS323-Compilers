@@ -1,0 +1,12 @@
+struct struct_1
+{
+  int num;
+  char value;
+  float res[10];
+};
+int t04_12012919(int num)
+{
+  struct struct_1 obj;
+  obj.num = num;
+  obj.res[1] = 2.3;
+}
