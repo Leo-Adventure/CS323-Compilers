@@ -1,8 +1,8 @@
 # <center>CS323 Assignment4</center>
 
-**Name: Mingqian Liao**
+**Name: Leo-Adventure**
 
-**SID: 12012919**
+**SID: 20221119**
 
 ## Exercise 1(Simple LR)
 
