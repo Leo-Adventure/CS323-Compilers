@@ -38,7 +38,7 @@ S\to a·B
 \\
 B\to ·S*B
 \\
-B \to ·
+B \to ·\epsilon
 \\
 S \to ·aB
 $$
@@ -60,7 +60,7 @@ B\to ·S*B
 \\
 S \to ·aB
 \\
-B\to ·
+B\to ·\epsilon
 $$
 $GOTO(I_5, S)$ will go to $I_4$
 
