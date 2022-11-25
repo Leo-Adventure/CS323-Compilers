@@ -1,6 +1,8 @@
 # Lexical Analysis & Syntax Analysis
 
-小组成员姓名学号：@[Leo-Adventure](https://github.com/Leo-Adventure)、@[yolk-pie-L](https://github.com/yolk-pie-L)
+> CONTRIBUTERS:
+>
+> @[Leo-Adventure](https://github.com/Leo-Adventure)、@[yolk-pie-L](https://github.com/yolk-pie-L)
 
 ## How To Run It
 
