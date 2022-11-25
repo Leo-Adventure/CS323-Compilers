@@ -1,0 +1,7 @@
+Error type 7 at line 9: binary operation on non-number variables
+Error type 5 at line 9: unmatching type on both sides of assignment
+Error type 7 at line 11: binary operation on non-number variables
+Error type 5 at line 11: unmatching type on both sides of assignment
+Error type 10 at line 12: indexing on non-array variable
+Error type 7 at line 12: binary operation on non-number variables
+Error type 5 at line 12: unmatching type on both sides of assignment

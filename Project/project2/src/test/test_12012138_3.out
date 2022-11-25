@@ -1,0 +1,4 @@
+Error type 10 at line 4: indexing on non-array variable
+Error type 5 at line 4: unmatching type on both sides of assignment
+Error type 8 at line 7: incompatiable return type
+Error type 5 at line 10: unmatching type on both sides of assignment

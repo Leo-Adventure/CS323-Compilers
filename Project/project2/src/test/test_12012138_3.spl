@@ -1,0 +1,12 @@
+int main(int m, int n, int q, int z){
+    int num[10];
+    int n = 3;
+    int q = n[3];
+    int eee = num[num[3]];
+    char c = 'u';
+    return 0.0;
+}
+int ccc(){
+    int d = 'd';
+    return d;
+}

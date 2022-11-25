@@ -1,0 +1,7 @@
+int main(){
+    int gg[93][10];
+    int hh[93][10];
+    gg = hh;
+    gg[10] = hh[11];
+    gg[10] = hh[11] + 2;
+}

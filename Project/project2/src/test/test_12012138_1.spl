@@ -1,0 +1,13 @@
+struct rabbit
+{
+  int weight;
+  float round;
+};
+int test_2_r07()
+{
+  struct rabbit r1;
+  struct rabbit r2;
+  struct rabbit r3 = r1 + r2;
+  int r1_weight = r1.weight;
+  return 0;
+}
