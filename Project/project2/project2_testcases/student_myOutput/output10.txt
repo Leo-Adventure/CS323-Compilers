@@ -1,0 +1,8 @@
+Error type 9 at line 9: invalid argument number for compare, foo
+Error type 5 at line 9: unmatching type on both sides of assignment
+Error type 9 at line 10: invalid argument number for compare, foo
+Error type 5 at line 10: unmatching type on both sides of assignment
+Error type 9 at line 11: invalid argument number for compare, foo
+Error type 5 at line 11: unmatching type on both sides of assignment
+Error type 11 at line 13: invoking non-function variable: a
+Error type 5 at line 13: unmatching type on both sides of assignment

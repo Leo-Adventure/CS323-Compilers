@@ -1,0 +1,1 @@
+Error type 9 at line 12: invalid argument number for compare, compare

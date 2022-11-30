@@ -1,0 +1,4 @@
+Error type 8 at line 2: incompatiable return type
+Error type 3 at line 8: redefine variable: a
+Error type 9 at line 10: invalid argument number for compare, fun0
+Error type 5 at line 10: unmatching type on both sides of assignment

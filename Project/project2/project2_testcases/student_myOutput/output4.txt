@@ -1,0 +1,3 @@
+Error type 9 at line 19: invalid argument number for compare, sum
+Error type 5 at line 19: unmatching type on both sides of assignment
+Error type 5 at line 23: unmatching type on both sides of assignment

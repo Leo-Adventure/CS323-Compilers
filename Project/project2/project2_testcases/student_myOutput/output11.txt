@@ -1,0 +1,9 @@
+Error type 15 at line 2: redefine struct: x
+Error type 3 at line 4: redefine variable: x
+Error type 3 at line 7: redefine variable: c
+Error type 3 at line 8: redefine variable: c
+Error type 3 at line 11: redefine variable: x
+Error type 3 at line 11: redefine variable: x
+Error type 3 at line 14: redefine variable: x
+Error type 3 at line 14: redefine variable: x
+Error type 4 at line 17: redefine function: main

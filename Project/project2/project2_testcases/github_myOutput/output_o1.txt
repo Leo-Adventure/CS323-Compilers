@@ -1,0 +1,2 @@
+Error type 3 at line 6: redefine variable: a
+Error type 3 at line 12: redefine variable: a

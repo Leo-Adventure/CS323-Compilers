@@ -1,0 +1,8 @@
+Error type 8 at line 10: incompatiable return type
+Error type 4 at line 13: redefine function: hello
+Error type 14 at line 21: no such member: province
+Error type 1 at Line 21: undefined variable: SiChuan
+Error type 5 at line 21: unmatching type on both sides of assignment
+Error type 13 at line 22: accessing with non-struct variable
+Error type 5 at line 22: unmatching type on both sides of assignment
+Error type 6 at line 23: left side in assignment is rvalue

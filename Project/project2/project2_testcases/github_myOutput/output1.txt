@@ -1,0 +1,3 @@
+Error type 1 at Line 5: undefined variable: x3
+Error type 7 at line 5: binary operation on non-number variables
+Error type 5 at line 5: unmatching type on both sides of assignment

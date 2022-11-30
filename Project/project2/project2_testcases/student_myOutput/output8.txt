@@ -1,0 +1,2 @@
+Error type 3 at line 4: redefine variable: a
+Error type 5 at line 5: unmatching type on both sides of assignment

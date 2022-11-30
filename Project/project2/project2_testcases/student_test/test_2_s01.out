@@ -1,0 +1,5 @@
+Error type 8 at Line 2: return value type mismatches the declared type
+Error type 9 at Line 10: invalid argument number for "fun0", expect 0, got 1
+Error type 9 at Line 10: invalid argument type for "fun1"
+Error type 9 at Line 10: invalid argument number for "fun1", expect 1, got 2
+Error type 5 at Line 10: unmatched type on both sides of assignment

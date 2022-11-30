@@ -1,0 +1,3 @@
+Error type 13 at line 19: accessing with non-struct variable
+Error type 13 at line 19: accessing with non-struct variable
+Error type 5 at line 19: unmatching type on both sides of assignment

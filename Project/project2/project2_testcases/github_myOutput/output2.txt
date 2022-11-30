@@ -1,0 +1,2 @@
+Error type 2 at line 8: undefined function: add
+Error type 5 at line 8: unmatching type on both sides of assignment

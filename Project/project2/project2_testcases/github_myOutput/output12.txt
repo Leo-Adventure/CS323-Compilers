@@ -1,0 +1,1 @@
+Error type 12 at line 15: indexing by non-integer

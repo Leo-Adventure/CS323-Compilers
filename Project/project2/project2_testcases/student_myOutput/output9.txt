@@ -1,0 +1,2 @@
+Error type 1 at Line 2: undefined variable: node
+Error type 1 at Line 3: undefined variable: node
