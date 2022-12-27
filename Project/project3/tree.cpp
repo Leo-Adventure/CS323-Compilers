@@ -1,9 +1,11 @@
 #include "tree.hpp"
 
-Node::Node(string name, int nodes_num, int line_num, ...) : nodetype(NONTERMINAL), name(name), nodes_num(nodes_num), line_num(line_num)
+Node::Node(string name, int nodes_num, string value, int line_num, ...) : nodetype(NONTERMINAL), name(name), nodes_num(nodes_num), line_num(line_num)
 {
     va_list childnodes;
     va_start(childnodes, line_num);
+    this->value = value;
+    this->nodes_num = nodes_num;
     for (int i = 0; i < nodes_num; i++)
     {
         Node *node = (Node *)va_arg(childnodes, Node *);
@@ -12,24 +14,31 @@ Node::Node(string name, int nodes_num, int line_num, ...) : nodetype(NONTERMINAL
     va_end(childnodes);
 }
 
-Node::Node(NodeType nodetype, char *char_value, int line_num) : nodetype(nodetype), line_num(line_num)
+Node::Node(NodeType nodetype, char *char_value, string value, int line_num) : nodetype(nodetype), line_num(line_num)
 {
+
     this->char_value = new char[100];
+    this->value = value;
     memcpy(this->char_value, char_value, strlen(char_value));
 }
 
 Node::Node(string name, int line_num) : nodetype(TERMINAL), name(name), line_num(line_num)
 {
+this -> value = "";
 }
 
-Node::Node(NodeType nodetype, string name, int int_value, int line_num) : nodetype(nodetype), int_value(int_value), line_num(line_num)
+Node::Node(NodeType nodetype, string name, string value, int int_value, int line_num) : nodetype(nodetype), int_value(int_value), line_num(line_num)
 {
+
     this->name = string(name);
+    this->value = value;
 }
 
-Node::Node(NodeType nodetype, string name, float float_value, int line_num) : nodetype(nodetype), float_value(float_value), line_num(line_num)
+Node::Node(NodeType nodetype, string name, string value, float float_value, int line_num) : nodetype(nodetype), float_value(float_value), line_num(line_num)
 {
+
     this->name = string(name);
+    this->value = value;
 }
 
 void printTree(Node *root, int space)
@@ -41,15 +50,16 @@ void printTree(Node *root, int space)
     {
         Node *node = nodes_queue[0];
         print(node, space + 2);
-        vector<Node*>::iterator k = nodes_queue.begin();
-	    nodes_queue.erase(k);
+        vector<Node *>::iterator k = nodes_queue.begin();
+        nodes_queue.erase(k);
         // nodes_queue.pop();
     }
 }
 
 void print(Node *node, int space)
 {
-    if(node->nodes_num == 0 && node->nodetype == NONTERMINAL){
+    if (node->nodes_num == 0 && node->nodetype == NONTERMINAL)
+    {
         return;
     }
     for (int i = 0; i < space; i++)

@@ -22,7 +22,7 @@ splc:
 	@mkdir bin
 	$(BISON) -d syntax.y
 	$(FLEX) lex.l
-	$(GPP) -o bin/splc syntax.tab.c tree.cpp my_error.cpp symbol.cpp type.cpp -lfl $(CXX_VERSION)
+	$(GPP) -o bin/splc syntax.tab.c tree.cpp my_error.cpp symbol.cpp type.cpp inter_rep.cpp -lfl $(CXX_VERSION)
 
 clean:	
 	@rm -rf bin lex.yy.c syntax.tab.c syntax.tab.h *.out output.txt

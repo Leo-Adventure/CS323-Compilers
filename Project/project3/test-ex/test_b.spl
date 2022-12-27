@@ -1,0 +1,22 @@
+struct Apple
+{
+    int ID;
+    int length;
+    int size;
+};
+
+struct Farm
+{
+    int ID;
+};
+
+int main()
+{
+    struct Apple a1;
+    struct Farm farm;
+    a1.length = 1;
+    a1.size = 2;
+    write(a1.length);
+    farm.ID = 20;
+    return 0;
+}

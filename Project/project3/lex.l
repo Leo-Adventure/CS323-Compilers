@@ -1,6 +1,7 @@
 %{
     #include "string.h"
     #include "stdlib.h"
+    #include<sstream>
     extern "C" int yylex();
     extern int has_error;
 %}
@@ -78,7 +79,7 @@ INVALID_NUMBER ([+-]?0x[0-9a-zA-Z]*)|(00+)
 {MULTIPLE_COMMENT} {
 }
 
-{TYPE} {yylval.node_ptr = new Node(Type, yytext, yylineno);
+{TYPE} {yylval.node_ptr = new Node(Type, yytext, "",yylineno);
 return TYPE;}
 
 {STRUCT} {yylval.node_ptr = new Node("STRUCT", yylineno);
@@ -88,7 +89,7 @@ return STRUCT;}
 {IF} {yylval.node_ptr = new Node("IF", yylineno); return IF;}
 {ELSE} { yylval.node_ptr = new Node("ELSE", yylineno); return ELSE;}
 {WHILE} {yylval.node_ptr = new Node("WHILE", yylineno); return WHILE;}
-{RETURN} {yylval.node_ptr = new Node("RETURN", yylineno); return RETURN;}
+{RETURN} {yylval.node_ptr = new Node("RETURN", yylineno);return RETURN;}
 {DOT} {yylval.node_ptr = new Node("DOT", yylineno); return DOT;}
 {SEMI} {yylval.node_ptr = new Node("SEMI", yylineno); return SEMI;}
 {COMMA} {yylval.node_ptr = new Node("COMMA", yylineno); return COMMA;}
@@ -112,12 +113,48 @@ return STRUCT;}
 {RB} {yylval.node_ptr = new Node("RB", yylineno); return RB;}
 {LC} {yylval.node_ptr = new Node("LC", yylineno); return LC;}
 {RC} {yylval.node_ptr = new Node("RC", yylineno); return RC;}
-{INT} {yylval.node_ptr = new Node(Int, yytext, atoi(yytext), yylineno); return INT;}
-{FLOAT} {yylval.node_ptr = new Node(Float, yytext, (float)atof(yytext), yylineno); return FLOAT;}
-{CHAR} {yylval.node_ptr = new Node(Char, yytext, yylineno); return CHAR;}
+{INT} {
+    int int_value = 0;
+    if (strlen(yytext) >= 3 && yytext[0] == '0') /* in hexidecimal form */
+        sscanf(yytext, "%x", &int_value);
+    else /* in decimal form */
+        int_value = atoi(yytext);
+    char *str_value = (char *)malloc(10*sizeof(char));
+
+    yylval.node_ptr = new Node(Int, yytext, str_value, int_value, yylineno); 
+    return INT;
+    }
+{FLOAT} {
+    stringstream ss; 
+    ss.str(yytext); 
+    string value = ss.str();
+    yylval.node_ptr = new Node(Float, yytext, value, (float)atof(yytext), yylineno); 
+    return FLOAT;
+}
+{CHAR} {
+    stringstream ss; 
+    ss.str(yytext); 
+    string value = ss.str();
+    yylval.node_ptr = new Node(Char,yytext, value, yylineno); 
+    return CHAR;
+}
+"read" {
+    yylval.node_ptr=new Node("READ", yylineno);
+    return READ;
+}
+"write" {
+    yylval.node_ptr=new Node("WRITE", yylineno);
+    return WRITE;
+}
 {WRONG_ID} {has_error=1; fprintf(stdout,"Error type A at Line %d: unknown lexeme %s\n",
-               yylineno, yytext); return ID;}
-{ID} {yylval.node_ptr = new Node(Id, yytext, yylineno); return ID;}
+               yylineno, yytext); printf("WRONG_ID\n");return ID;}
+{ID} {
+    stringstream ss;
+    ss.str(yytext);
+    string value = ss.str();
+
+    yylval.node_ptr = new Node(Id, yytext, value, yylineno); 
+    return ID;}
 [ \t\r]+ {}
 "\n" { yycolno = 1; }
 {ILLEGAL_TOKEN} {has_error=1; fprintf(stdout,"Error type A at Line %d: unknown lexeme %s\n",

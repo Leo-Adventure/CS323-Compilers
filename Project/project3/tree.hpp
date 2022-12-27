@@ -8,10 +8,10 @@
 #include <string.h>
 #include <stdarg.h>
 
-
 using namespace std;
 
-typedef enum NodeType{
+typedef enum NodeType
+{
     Type,
     Int,
     Char,
@@ -21,39 +21,41 @@ typedef enum NodeType{
     NONTERMINAL
 } NodeType;
 
-
-class Node{
+class Node
+{
 public:
     NodeType nodetype;
     string name;
     int line_num;
-    union{
+    union
+    {
         int int_value;
-        char* char_value;
+        char *char_value;
         float float_value;
     };
-    int nodes_num = 0;
-    vector<Node*> nodes_queue;
+    int nodes_num;
+    string value;
+    vector<Node *> nodes_queue;
 
     // 用于 bison
-    explicit Node(string name, int nodes_num, int line_num, ...);
+    explicit Node(string name, int nodes_num, string value, int line_num, ...);
 
     // 用于 lex
-    // 用于 TERMINAL 
+    // 用于 TERMINAL
     explicit Node(string name, int line_num);
 
     // 用于 CHAR, Id
-    explicit Node(NodeType nodetype, char* char_value, int line_num);
+    explicit Node(NodeType nodetype, char *char_value, string value, int line_num);
 
     // 用于INT
-    explicit Node(NodeType nodetype, string name, int int_value, int line_num);
+    explicit Node(NodeType nodetype, string name, string value, int int_value, int line_num);
 
     // 用于 FLOAT
-    explicit Node(NodeType nodetype, string name, float float_value, int line_num);        
+    explicit Node(NodeType nodetype, string name, string value, float float_value, int line_num);
 };
 
-void printTree(Node* root, int space=0);
+void printTree(Node *root, int space = 0);
 
-void print(Node* node, int space);
+void print(Node *node, int space);
 
 #endif

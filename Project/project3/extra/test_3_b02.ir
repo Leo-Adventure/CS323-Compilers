@@ -1,0 +1,158 @@
+FUNCTION Swap :
+PARAM t2
+PARAM t3
+PARAM t4
+t5 := #0
+t6 := t3 * #4
+t7 := t4 + t6
+t8 := *t7
+t5 := t8
+t10 := t2 * #4
+t11 := t4 + t10
+t12 := *t11
+t13 := t3 * #4
+t14 := t4 + t13
+*t14 := t12
+t16 := t2 * #4
+t17 := t4 + t16
+*t17 := t5
+t19 := #0
+RETURN t19
+FUNCTION Partition :
+PARAM t22
+PARAM t23
+PARAM t24
+t25 := t23 * #4
+t26 := t24 + t25
+t27 := *t26
+t28 := t27
+LABEL label29 :
+IF t23 < t22 GOTO label32
+GOTO label76
+LABEL label32 :
+LABEL label33 :
+IF t23 < t22 GOTO label36
+GOTO label47
+LABEL label36 :
+t37 := t22 * #4
+t38 := t24 + t37
+t39 := *t38
+IF t39 >= t28 GOTO label42
+GOTO label47
+LABEL label42 :
+t43 := #1
+t44 := t22 - t43
+t22 := t44
+GOTO label33
+LABEL label47 :
+t48 := &t23
+t49 := &t22
+ARG t24
+ARG t23
+ARG t22
+t53 := CALL Swap
+LABEL label54 :
+IF t23 < t22 GOTO label57
+GOTO label68
+LABEL label57 :
+t58 := t23 * #4
+t59 := t24 + t58
+t60 := *t59
+IF t60 <= t28 GOTO label63
+GOTO label68
+LABEL label63 :
+t64 := #1
+t65 := t23 + t64
+t23 := t65
+GOTO label54
+LABEL label68 :
+t69 := &t23
+t70 := &t22
+ARG t24
+ARG t23
+ARG t22
+t74 := CALL Swap
+GOTO label29
+LABEL label76 :
+RETURN t23
+FUNCTION QuickSort :
+PARAM t79
+PARAM t80
+PARAM t81
+IF t80 < t79 GOTO label84
+GOTO label108
+LABEL label84 :
+t85 := &t80
+t86 := &t79
+ARG t81
+ARG t80
+ARG t79
+t90 := CALL Partition
+t91 := t90
+t92 := &t80
+t93 := #1
+t94 := t91 - t93
+t95 := &t94
+ARG t81
+ARG t80
+ARG t94
+t99 := CALL QuickSort
+t100 := #1
+t101 := t91 + t100
+t102 := &t101
+t103 := &t79
+ARG t81
+ARG t101
+ARG t79
+t107 := CALL QuickSort
+LABEL label108 :
+t109 := #0
+RETURN t109
+FUNCTION main :
+t112 := #8
+t113 := t112
+DEC t114 32
+t115 := #0
+t116 := t115
+LABEL label117 :
+IF t116 < t113 GOTO label120
+GOTO label130
+LABEL label120 :
+READ t121
+t122 := &t114
+t123 := t116 * #4
+t124 := t122 + t123
+*t124 := t121
+t126 := #1
+t127 := t116 + t126
+t116 := t127
+GOTO label117
+LABEL label130 :
+t131 := &t114
+t132 := #0
+t133 := &t132
+t134 := #1
+t135 := t113 - t134
+t136 := &t135
+ARG t131
+ARG t132
+ARG t135
+t140 := CALL QuickSort
+t141 := #0
+t116 := t141
+LABEL label143 :
+IF t116 < t113 GOTO label146
+GOTO label156
+LABEL label146 :
+t147 := &t114
+t148 := t116 * #4
+t149 := t147 + t148
+t150 := *t149
+WRITE t150
+t152 := #1
+t153 := t116 + t152
+t116 := t153
+GOTO label143
+LABEL label156 :
+t157 := #0
+RETURN t157

@@ -17,6 +17,7 @@ public:
     Array* array_ptr = nullptr;
     ParamsList* params_ptr = nullptr;   
     Category category;
+    int size = 1;
 
     GlobalType(Category category, NodeType nodetype);
     GlobalType(Category category, Array* array_ptr);

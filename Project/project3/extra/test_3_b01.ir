@@ -1,0 +1,95 @@
+FUNCTION Joseph :
+PARAM t2
+PARAM t3
+DEC t4 400
+t5 := #1
+t6 := t5
+t7 := #0
+t8 := t7
+t9 := #0
+t10 := t9
+t11 := #0
+t12 := t11
+LABEL label13 :
+IF t6 <= t3 GOTO label16
+GOTO label26
+LABEL label16 :
+t17 := #1
+t18 := &t4
+t19 := t6 * #4
+t20 := t18 + t19
+*t20 := t17
+t22 := #1
+t23 := t6 + t22
+t6 := t23
+GOTO label13
+LABEL label26 :
+t27 := #1
+t6 := t27
+LABEL label29 :
+IF t6 <= t3 GOTO label32
+GOTO label80
+LABEL label32 :
+t33 := &t4
+t34 := t6 * #4
+t35 := t33 + t34
+t36 := *t35
+t37 := #1
+IF t36 == t37 GOTO label40
+GOTO label69
+LABEL label40 :
+t41 := &t4
+t42 := t6 * #4
+t43 := t41 + t42
+t44 := *t43
+t45 := t8 + t44
+t8 := t45
+IF t8 == t2 GOTO label49
+GOTO label61
+LABEL label49 :
+WRITE t6
+t51 := #0
+t8 := t51
+t53 := #0
+t54 := &t4
+t55 := t6 * #4
+t56 := t54 + t55
+*t56 := t53
+t58 := #1
+t59 := t10 + t58
+t10 := t59
+LABEL label61 :
+IF t10 == t3 GOTO label64
+GOTO label68
+LABEL label64 :
+t12 := t6
+t66 := #0
+RETURN t66
+LABEL label68 :
+LABEL label69 :
+IF t6 == t3 GOTO label72
+GOTO label75
+LABEL label72 :
+t73 := #0
+t6 := t73
+LABEL label75 :
+t76 := #1
+t77 := t6 + t76
+t6 := t77
+GOTO label29
+LABEL label80 :
+t81 := #0
+RETURN t81
+FUNCTION main :
+t84 := #0
+t85 := #0
+READ t86
+t84 := t86
+READ t88
+t85 := t88
+t90 := &t85
+ARG t84
+ARG t85
+t93 := CALL Joseph
+t94 := #0
+RETURN t94

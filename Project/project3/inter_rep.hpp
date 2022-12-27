@@ -10,6 +10,11 @@ extern unordered_map<string, int> table;
 
 const int BASIC_SIZE = 4;
 
+string addr2str(int addr);
+string operator2str(Operator op);
+int getOffSet(GlobalType* global_type, string name);
+string getNodeName(Node* node);
+
 class TAC
 {
 public:
@@ -59,7 +64,6 @@ public:
         TAC::type = type;
         TAC::name = name;
         this -> sizes = sizes;
-        this->sizes.insert(this->sizes.end(), sizes.begin(), sizes.end());
         int offset = 1;
         for(int i = sizes.size() - 1; i >= 0; i--){
             suffix.push_back(offset);
@@ -70,10 +74,15 @@ public:
     string to_string(){
         char buffer[1024];
         int size = 1;
+        // printf("In tostring, the size of this->sizes = %d\n", this->sizes.size());
         for(int i = 0; i < this->sizes.size(); i++){
             size *= this->sizes[i];
         }
         // 注意这里要更改为合适的size
+        // printf("Basicsize = %d, size = %d\n", BASIC_SIZE, size);
+        if(type != nullptr && type->category == STRUCTURE){
+            size = type->size;
+        }
         sprintf(buffer, "DEC t%d %d", TAC::address, BASIC_SIZE * size);
         return buffer;
     }
@@ -298,7 +307,6 @@ public:
 
 
 
-string addr2str(int addr);
 int inter_exp(Node *node, bool single = false);
 vector<int> inter_args(Node *node);
 
@@ -327,7 +335,8 @@ void putIR(string name, int id);
 int genid(TAC *tac);
 int *genlist(int id = tac_vector.size() + 1);
 
-void irIF(int id, int tbranch, int fbranch);
-void irWHILE(vector<int>* stat_vec, int end, int target);
+void inter_IF(int id, int tbranch, int fbranch);
+void inter_WHILE(vector<int>* stat_vec, int end, int target);
+GlobalType *checkType(Node *node);
 
 float formatPaser(string name, string value);
