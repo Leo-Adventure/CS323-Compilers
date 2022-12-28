@@ -1,6 +1,6 @@
 # <center>CS323 Project Phase 3 Intermediate Code generation Report </center>
 
-组员：李昕 12012138 & 廖铭骞 12012919
+组员：@Leo-Adventure & @yolk-pie-L
 
 ## 如何运行
 
